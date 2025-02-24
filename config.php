@@ -1,3 +1,3 @@
 <?php
 define('BASE', '/librairie-mvc');
-define('BASE', "/librairie-mvc/public/");
+define('ASSET', "/librairie-mvc/public/");
