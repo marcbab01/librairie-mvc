@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="<? ASSET; ?>css/style.css">
 </head>
 <body>
-    <h1><?php echo $data; ?></h1>
+    <main>
+        Hello from the Other Side
+    </main>
 </body>
 </html>

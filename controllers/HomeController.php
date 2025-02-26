@@ -1,6 +1,6 @@
 <?php
 
-include('models/ExampleModel.php');
+namespace App\Controllers;
 
 class HomeController {
     public function index() {
