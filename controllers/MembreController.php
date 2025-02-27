@@ -4,7 +4,7 @@ use App\Models\Membre;
 use App\Providers\View;
 use App\Providers\Validator;
 
-class ClientController {
+class MembreController {
 
     public function index() {
         $membre = new Membre;
@@ -22,7 +22,7 @@ class ClientController {
             $membre = new Membre;
             if($selectId = $membre->selectId($data['id'])){
                 return View::render('membre/show', ['membre'=>$selectId]);
-            }else{
+            } else {
                 return View::render('error', ['msg'=>'Ce membre n existe pas']);
             }
             

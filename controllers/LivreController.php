@@ -4,7 +4,7 @@ use App\Models\Livre;
 use App\Providers\View;
 use App\Providers\Validator;
 
-class ClientController {
+class LivreController {
 
     public function index() {
         $livre = new Livre;
