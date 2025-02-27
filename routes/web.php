@@ -9,7 +9,13 @@ Route::get('/contact', 'HomeController@contact');
 Route::get('/product', 'HomeController@product');
 
 
-Route::get('/membres', 'MembreController@index');
+Route::get('/membre', 'MembreController@index');
+Route::get('/membre/create', 'MembreController@create');
+Route::post('/membre/create', 'MembreController@store');
+Route::get('/membre/show', 'MembreController@show');
+Route::get('/membre/edit', 'MembreController@edit');
+Route::post('/membre/edit', 'MembreController@update');
+Route::post('/membre/delete', 'MembreController@delete');
 
 
 Route::dispatch();
