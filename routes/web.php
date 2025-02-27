@@ -1,6 +1,7 @@
 <?php
 use App\controllers\HomeController;
 use App\controllers\MembreController;
+use App\controllers\LivreController;
 use App\Routes\Route;
 
 Route::get('/home', 'HomeController@index');
