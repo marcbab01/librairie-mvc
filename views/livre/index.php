@@ -19,7 +19,7 @@
         <tr>
             <td><a href="{{base}}/livre/show?id={{livre.id}}">{{livre.titre}}</a></td>
             <td>{{livre.auteur}}</td>
-            <td>{{livre.categorie_id}}</td>
+            <td>{{livre.categories.categorie}}</td>
             <td>{{livre.anneePublication}}</td>
         </tr>
         {% endfor %}
