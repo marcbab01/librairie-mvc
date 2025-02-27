@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Routes;
+
 class Route {
     private static $routes = [];
 

@@ -4,8 +4,6 @@ use App\Models\Livre;
 use App\Providers\View;
 use App\Providers\Validator;
 
-use App\models\Livre;
-
 class ClientController {
 
     public function index() {

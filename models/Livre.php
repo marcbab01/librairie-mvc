@@ -1,5 +1,5 @@
 <?php
-namespace App\models;
+namespace App\Models;
 use App\models\CRUD;
 
 class Livre extends CRUD {

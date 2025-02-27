@@ -4,8 +4,6 @@ use App\Models\Membre;
 use App\Providers\View;
 use App\Providers\Validator;
 
-use App\models\Membre;
-
 class ClientController {
 
     public function index() {

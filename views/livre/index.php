@@ -15,7 +15,7 @@
             <th>Catégorie</th>
             <th>Année de publication</th>
         </tr>
-        {% for client in clients %}
+        {% for livre in livres %}
         <tr>
             <td><a href="{{base}}/livre/show?id={{livre.id}}">{{livre.titre}}</a></td>
             <td>{{livre.auteur}}</td>
