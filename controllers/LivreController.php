@@ -41,7 +41,7 @@ class LivreController {
             $livre = new Livre;
             $insert = $livre->insert($data);
             if($insert){
-                 return view::redirect('livre/show?id='.$insert);
+                 return View::redirect('livre/show?id='.$insert);
             }else{
              return View::render('error');
             }
@@ -75,7 +75,7 @@ class LivreController {
                $livre = new Livre;
                $update = $livre->update($data, $get['id']);
                 if($update){
-                    return view::redirect('livre/show?id='.$get['id']);
+                    return View::redirect('livre/show?id='.$get['id']);
                 }else{
                     return View::render('error');
                 }
@@ -91,7 +91,7 @@ class LivreController {
         $livre = new Livre;
         $delete = $livre->delete($id);
         if($delete){
-            return view::redirect('livres');
+            return View::redirect('livres');
         }else{
             return View::render('error');
         }

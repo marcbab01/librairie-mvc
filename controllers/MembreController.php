@@ -41,7 +41,7 @@ class MembreController {
             $membre = new Membre;
             $insert = $membre->insert($data);
             if($insert){
-                 return view::redirect('membre/show?id='.$insert);
+                 return View::redirect('membre/show?id='.$insert);
             }else{
              return View::render('error');
             }
@@ -75,7 +75,7 @@ class MembreController {
                $membre = new Membre;
                $update = $membre->update($data, $get['id']);
                 if($update){
-                    return view::redirect('membre/show?id='.$get['id']);
+                    return View::redirect('membre/show?id='.$get['id']);
                 }else{
                     return View::render('error');
                 }
@@ -91,7 +91,7 @@ class MembreController {
         $membre = new Membre;
         $delete = $membre->delete($id);
         if($delete){
-            return view::redirect('membres');
+            return View::redirect('membres');
         }else{
             return View::render('error');
         }
