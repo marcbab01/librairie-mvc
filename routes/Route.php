@@ -18,11 +18,13 @@ class Route {
         $urlSegments = explode('?', $url);
         $urlPath = rtrim($urlSegments[0], '/');
         $method = $_SERVER['REQUEST_METHOD'];
+       
 
         foreach (self::$routes as $route) {
             if (BASE.$route['url'] == $urlPath && $route['method'] == $method) {
+
                 $controllerSegments = explode('@', $route['controller']);
-                $controllerName = $controllerSegments[0];
+                $controllerName = "App\\Controllers\\".$controllerSegments[0];
                 $methodName = $controllerSegments[1];
                 $controllerInstance = new $controllerName();
 
