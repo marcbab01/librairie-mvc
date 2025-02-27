@@ -74,7 +74,7 @@ class ClientController {
         $validator->field('email', $data['email'])->required()->max(45)->email();
 
         if($validator->isSuccess()){
-               $client = new Membre;
+               $membre = new Membre;
                $update = $membre->update($data, $get['id']);
                 if($update){
                     return view::redirect('membre/show?id='.$get['id']);
