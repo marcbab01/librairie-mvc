@@ -14,7 +14,7 @@
             <p><strong>Courriel: </strong>{{membre.email}}</p>
             <p><strong>Téléphone: </strong>{{membre.phone}}</p>
             <a href="{{base}}/membre/edit?id={{membre.id}}" class="bouton">Edit</a>
-            <form method="post">
+            <form action="/membres" method="post">
                 <input type="hidden" name="id" value="<?= $id; ?>">
                 <button type="submit" class="bouton">Delete</button>
             </form>

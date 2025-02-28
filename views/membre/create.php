@@ -10,13 +10,13 @@
     <div class="conteneur">
         <form method="post">
             <h2>Nouveau Membre</h2>
-            <label for="lname">Nom</label>
-            <input type="text" name="lname" value="{{membre.lName}}" id="lname">
+            <label for="lName">Nom</label>
+            <input type="text" name="lName" value="{{membre.lName}}" id="lname">
             {% if errors.lName is defined %}
                 <span class="error"> {{errors.lName}}</span>
             {% endif %}
-            <label for="fname">Prénom</label>
-            <input type="text" name="fname" value="{{membre.fName}}" id="fname">
+            <label for="fName">Prénom</label>
+            <input type="text" name="fName" value="{{membre.fName}}" id="fname">
             {% if errors.fName is defined %}
                 <span class="error"> {{errors.fName}}</span>
             {% endif %}

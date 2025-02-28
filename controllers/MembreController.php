@@ -8,7 +8,7 @@ class MembreController {
 
     public function index() {
         $membre = new Membre;
-        $select = $membre->select('lname');
+        $select = $membre->select('id');
         return View::render('membre/index', ['membres' => $select]);
     }
 
@@ -30,9 +30,15 @@ class MembreController {
     }
 
     public function store($data=[]){
+
+        $fname = isset($data['fName']) ? $data['fName'] : null;
+        $lname = isset($data['lName']) ? $data['lName'] : null;
+        $phone = isset($data['phone']) ? $data['phone'] : null;
+        $email = isset($data['email']) ? $data['email'] : null;
+
         $validator = new Validator;
-        $validator->field('lname', $data['lname'])->max(25);
-        $validator->field('fname', $data['fname'])->max(45);
+        $validator->field('lName', $data['lName'])->min(3)->max(25);
+        $validator->field('fName', $data['fName'])->min(3)->max(45);
         $validator->field('phone', $data['phone'])->max(20);
         $validator->field('email', $data['email'])->required()->max(45)->email();
 
@@ -52,7 +58,7 @@ class MembreController {
 
     public function edit($data=[]){
         if(isset($data['id'])&& $data['id']!=null){
-            $client = new Membre;
+            $membre = new Membre;
             if($selectId = $membre->selectId($data['id'])){
                 return View::render('membre/edit', ['membre'=>$selectId]);
             }else{
@@ -64,9 +70,14 @@ class MembreController {
     }
 
     public function update($data=[], $get=[]){
+        $fname = isset($data['fName']) ? $data['fName'] : null;
+        $lname = isset($data['lName']) ? $data['lName'] : null;
+        $phone = isset($data['phone']) ? $data['phone'] : null;
+        $email = isset($data['email']) ? $data['email'] : null;
+
         $validator = new Validator;
-        $validator->field('lname', $data['lname'])->max(25);
-        $validator->field('fname', $data['fname'])->max(45);
+        $validator->field('lName', $data['lName'])->min(3)->max(25);
+        $validator->field('fName', $data['fName'])->min(3)->max(45);
         $validator->field('phone', $data['phone'])->max(20);
         $validator->field('email', $data['email'])->required()->max(45)->email();
 

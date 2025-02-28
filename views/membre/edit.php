@@ -11,13 +11,13 @@
         <form method="post">
             <input type="hidden" name="id" value="<?= $id; ?>">
             <h2>Modifier Membre</h2>
-            <label for="lname">Nom</label>
-            <input type="text" name="lname" value="{{membre.lName}}" id="lname">
+            <label for="lName">Nom</label>
+            <input type="text" name="lName" value="{{membre.lName}}" id="lName">
             {% if errors.lName is defined %}
                 <span class="error"> {{errors.lName}}</span>
             {% endif %}
-            <label for="fname">Prénom</label>
-            <input type="text" name="fname" value="{{membre.fName}}" id="fname">
+            <label for="fName">Prénom</label>
+            <input type="text" name="fName" value="{{membre.fName}}" id="fName">
             {% if errors.fName is defined %}
                 <span class="error"> {{errors.fName}}</span>
             {% endif %}

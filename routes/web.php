@@ -16,7 +16,7 @@ Route::post('/membre/create', 'MembreController@store');
 Route::get('/membre/show', 'MembreController@show');
 Route::get('/membre/edit', 'MembreController@edit');
 Route::post('/membre/edit', 'MembreController@update');
-Route::post('/membre/delete', 'MembreController@delete');
+Route::post('/membres', 'MembreController@delete');
 
 Route::get('/livres', 'LivreController@index');
 Route::get('/livre/create', 'LivreController@create');
@@ -24,7 +24,7 @@ Route::post('/livre/create', 'LivreController@store');
 Route::get('/livre/show', 'LivreController@show');
 Route::get('/livre/edit', 'LivreController@edit');
 Route::post('/livre/edit', 'LivreController@update');
-Route::post('/livre/delete', 'LivreController@delete');
+Route::post('/livre/index', 'LivreController@delete');
 
 
 Route::dispatch();
