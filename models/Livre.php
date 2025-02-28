@@ -1,6 +1,6 @@
 <?php
 namespace App\Models;
-use App\models\CRUD;
+use App\Models\CRUD;
 
 class Livre extends CRUD {
     protected $table = "livres";

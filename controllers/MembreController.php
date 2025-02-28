@@ -8,8 +8,7 @@ class MembreController {
 
     public function index() {
         $membre = new Membre;
-        $select = $membre->select('fname');
-        include('views/membre/index.php');
+        $select = $membre->select('lname');
         return View::render('membre/index', ['membres' => $select]);
     }
 

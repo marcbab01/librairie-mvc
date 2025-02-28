@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membre Edit</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset }}/css/style.css">
 </head>
 <body>
-    <div class="container">
-        <form action="membre-update.php" method="post">
+    <div class="conteneur">
+        <form method="post">
             <input type="hidden" name="id" value="<?= $id; ?>">
             <h2>Modifier Membre</h2>
             <label for="lname">Nom</label>
-            <input type="text" name="lname" value="{{membre.lname}}" id="lname">
-            {% if errors.lname is defined %}
-                <span class="error"> {{errors.lname}}</span>
+            <input type="text" name="lname" value="{{membre.lName}}" id="lname">
+            {% if errors.lName is defined %}
+                <span class="error"> {{errors.lName}}</span>
             {% endif %}
             <label for="fname">Prénom</label>
-            <input type="text" name="fname" value="{{membre.fname}}" id="fname">
-            {% if errors.fname is defined %}
-                <span class="error"> {{errors.fname}}</span>
+            <input type="text" name="fname" value="{{membre.fName}}" id="fname">
+            {% if errors.fName is defined %}
+                <span class="error"> {{errors.fName}}</span>
             {% endif %}
             <label for="email">Courriel</label>
             <input type="email" name="email" value="{{membre.email}}" id="email">

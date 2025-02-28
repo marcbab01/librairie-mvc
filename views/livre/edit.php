@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modification de Livre</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ asset }}/css/style.css">
 </head>
 <body>
     <div class="conteneur">
-        <form action="livre-store.php" method="post">
+        <form method="post">
             <h2>Nouveau Livre</h2>
             <label for="titre">Titre</label>
             <input type="text" name="titre" value="{{livre.titre}}" id="titre">

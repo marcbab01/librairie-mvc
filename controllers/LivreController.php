@@ -9,7 +9,6 @@ class LivreController {
     public function index() {
         $livre = new Livre;
         $select = $livre->select('titre');
-        include('views/livre/index.php');
         return View::render('livre/index', ['livres' => $select]);
     }
 

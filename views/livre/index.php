@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste de Livres</title>
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{{ asset }}/css/style.css">
 </head>
 <body>
     <h1>Livres</h1>
@@ -15,12 +15,12 @@
             <th>Catégorie</th>
             <th>Année de publication</th>
         </tr>
-        {% for livre in livres %}
+        {% for livres in livres %}
         <tr>
-            <td><a href="{{base}}/livre/show?id={{livre.id}}">{{livre.titre}}</a></td>
-            <td>{{livre.auteur}}</td>
-            <td>{{livre.categories.categorie}}</td>
-            <td>{{livre.anneePublication}}</td>
+            <td><a href="{{base}}/livre/show?id={{livres.id}}">{{livres.titre}}</a></td>
+            <td>{{livres.auteur}}</td>
+            <td>{{livres.categories.categorie}}</td>
+            <td>{{livres.anneePublication}}</td>
         </tr>
         {% endfor %}
     </table>
