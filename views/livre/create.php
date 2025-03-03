@@ -23,14 +23,9 @@
             <label for="categorie_id">Catégorie</label>
             <select name="categorie_id" id="categorie_id">
                 <option value="">Sélectionne une Catégorie</option>
-                <?php 
-            foreach($select as $row){
-
-            ?>
-                <option value="<?=$row['id']?>"><?= $row['categorie'];?></option>
-                <?php
-                }
-            ?>
+                {% for categorie in categories %}
+                <option value="{{categories.id}}" {% if categories.id== membres.categorie_id %} selected {% endif %}>{{categorie.categories}}</option>
+                {% endfor %}
             </select>
             <label for="anneePublication">Année de Publication</label>
             <input type="text" name="anneePublication" value="{{livre.anneePublication}}" id="aneePublication">
