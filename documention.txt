@@ -1,0 +1,9 @@
+Ceci projet est un projet web développée en PHP avec l'architecture MVC, accompagnée avec un base de données MySQL et l'utilisation de COMPOSER et Twig. Cette application permettra la gestion d'une librairie inclunat 4 tables principales:
+- Livres
+- Membres
+- Emprunts
+- Catégories
+L’application propose un CRUD complet pour la gestion des livres et des catégories, une connexion sécurisée via PDO, et une interface dynamique avec Twig pour le rendu des vues.
+
+Lien WebDev: https://e2495915.webdev.cmaisonneuve.qc.ca/librairie-mvc/
+Lien Github: https://github.com/marcbab01/librairie-mvc
