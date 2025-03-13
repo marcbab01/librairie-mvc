@@ -19,15 +19,15 @@
             <label>Mot de passe</label>
             <input type="text" name="password">
             <label>Courriel</label>
-            <input type="text" name="email" value="{{user.email}}">
+            <input type="email" name="email" value="{{user.email}}">
             <label>Privilège</label>
-            <input type="submit" class="bouton" value="save">
             <select name="privilege_id">
-                    <option value="">Select privilege</option>
-                    {% for privilege in privileges %}
-                        <option value="{{ privilege.id }}" {% if privilege.id== user.privilege_id %} selected {% endif %}>{{ privilege.privilege }}</option>
-                    {% endfor %}
-                </select>
+                <option value="">Select privilege</option>
+                {% for privilege in privileges %}
+                    <option value="{{ privilege.id }}" {% if privilege.id== user.privilege_id %} selected {% endif %}>{{ privilege.privilege }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" class="bouton" value="save">
         </form>
     </div>
 </body>

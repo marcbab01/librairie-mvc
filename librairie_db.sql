@@ -34,6 +34,23 @@ CREATE TABLE emprunts (
     Constraint FK_LivreEmprunt FOREIGN KEY (livre_id) REFERENCES livres(id)
 );
 
+CREATE TABLE privilege (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    privilege VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    lName VARCHAR(50) NOT NULL,
+    fName VARCHAR(50) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    privilege_id INT NOT NULL,
+    CONSTRAINT fk_privilege_id FOREIGN KEY (privilege_id) REFERENCES privilege(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO categories (categorie) VALUES
 ('Suspense'), ('Romance'), ('Poésie'), ('Classique'), ('Fantaisie'), ('Fiction'), ('Science-Fiction'), ('Biographie');
 
@@ -41,3 +58,8 @@ INSERT INTO membres (lName, fName, email, phone) VALUES
 ('Babin', 'Marc-Olivier', 'mobabin@gmail.com', '514-123-4567'),
 ('Dupré', 'Martin', 'mdupre@hotmail.com', '438-666-6666'),
 ('Sanches', 'Marcos', 'msanches@hotmail.com', '450-987-6543');
+
+INSERT INTO privilege (privilege) VALUES ('Admin'), ('Manager'), ('Employee');
+
+INSERT INTO user (lName, fName, username, password, email, privilege_id) VALUES
+('Babin', 'Marc-Olivier', 'mobabin', 'administrateur', 'mobabin@gmail.com', 1);

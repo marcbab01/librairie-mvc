@@ -3,13 +3,19 @@ namespace App\controllers;
 use App\Models\Membre;
 use App\Providers\View;
 use App\Providers\Validator;
+use App\Providers\Auth;
 
 class MembreController {
 
     public function index() {
-        $membre = new Membre;
-        $select = $membre->select('id');
-        return View::render('membre/index', ['membres' => $select]);
+        if(Auth::session()) {
+            $membre = new Membre;
+            $select = $membre->select('id');
+            if($select) {
+                return View::render('membre/index', ['membres' => $select]);
+            }
+            return View::render('error');
+        }
     }
 
     public function create(){
