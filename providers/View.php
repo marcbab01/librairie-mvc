@@ -10,18 +10,18 @@ class View {
         $twig = new Environment($loader);
         $twig->addGlobal('asset', ASSET);
         $twig->addGlobal('base', BASE);
-        $twig->addGlobal('session',$_SESSION);
-        if(isset($_SESSION['fingerPrint']) and $_SESSION['fingerPrint']==md5($_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR'])){
+        $twig->addGlobal('session', $_SESSION);
+        if(isset($_SESSION['fingerPrint']) && $_SESSION['fingerPrint'] == md5($_SERVER['HTTP_USER_AGENT'].$_SERVER['REMOTE_ADDR'])){
             $guest = false;
-        } else{
+        }else{
             $guest = true;
         }
         $twig->addGlobal('guest', $guest);
 
-        echo $twig->render($template.'.php', $data);
+        echo $twig->render($template.".php", $data);
     }
-    
-    static public function redirect($url) {
-        header('location:'.BASE.'/'.$url);
+
+    static public function redirect($url){
+        return header('location:'.BASE.'/'.$url);
     }
 }

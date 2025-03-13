@@ -17,23 +17,21 @@ class AuthController {
         $validator->field('password', $data['password'])->min(6)->max(20);
         if($validator->isSuccess()){
             $user = new User();
-            $checkuser = $user->checkUser($data['username'], $data['password']);
-            if($checkuser){
-                return View::redirect('membres');
-            }else{
-                $errors['message'] = "SVP! Vérifier vos informations";
-                // print_r();
-                return View::render('auth/index', ['errors'=>$errors, 'user'=>$data]);
+            $data['password'] = $user->hashPassword($data['password']);
+            $insert = $user->insert($data);
+            if($insert){
+                return View::redirect('login');
             }
         }else{
             $errors = $validator->getErrors();
-
-            return View::render('auth/index', ['errors'=>$errors, 'user'=>$data]);
+            $privilege = new Privilege;
+            $select = $privilege->Select();
+            return View::render('user/create', ['errors'=>$errors, 'user'=>$data, 'privileges' => $select]);
         }
     }
 
-    public function delete(){
-        session_destroy();
-        return View::redirect('login');
-    }
+    // public function delete(){
+    //     session_destroy();
+    //     return View::redirect('login');
+    // }
 }

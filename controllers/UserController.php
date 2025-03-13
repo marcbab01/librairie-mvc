@@ -42,8 +42,8 @@ class UserController {
         }else{
             $errors = $validator->getErrors();
             $privilege = new Privilege;
-            $privileges = $privilege->select('privilege');
-            return View::render('user/create', ['errors'=>$errors, 'user'=>$data, 'privileges'=>$privileges]);
+            $select = $privilege->select();
+            return View::render('user/create', ['errors'=>$errors, 'user'=>$data, 'privileges'=>$select]);
         }
     }
 }

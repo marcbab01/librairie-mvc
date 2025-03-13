@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="{{ asset }}/css/style.css">
 </head>
 <body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="{{ base }}/membres">Membres</a></li>
+            {% if session.privilege_id == 1 %}
+            <li><a href="{{ base }}/user/create">User</a></li>
+            {% endif %}
+            {% if guest %}
+            <li><a href="{{ base }}/login">Login</a></li>
+            {% else %}
+            <li><a href="{{ base }}/logout">Logout</a></li>
+            {% endif %}
+            <li><a href="{{ base }}/membres">Membres</a></li>
+            <li><a href="{{ base }}/livres">Livres</a></li>
+        </ul>
+    </nav>
     <div class="conteneur">
         <form method="post">
             <h2>Nouveau Livre</h2>
